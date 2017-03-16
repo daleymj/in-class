@@ -1,15 +1,17 @@
 /*
 Theme Name: Plattypus
-Author: Matt Daley
+Author: Melissa Cabral
 Version: 0.1
 License: GPLv3
 Description: A very simple theme for learning WordPress
 */
+
 body {
   max-width: 60em;
   margin: 0 auto;
   font-family: Calibri, Arial, sans-serif;
 }
+
 #header,
 #footer,
 #content,
@@ -17,15 +19,18 @@ body {
   padding: 2%;
   box-sizing: border-box;
 }
+
 a {
   color: dodgerblue;
   text-decoration: none;
 }
+
 a:hover,
 a:focus {
   color: darkgoldenrod;
   text-decoration: underline;
 }
+
 nav {
   background: #eee;
   margin: 1em 0;
@@ -44,67 +49,136 @@ nav a {
   display: block;
   padding: .5em;
 }
+
 nav a:hover {
   background: #ddd;
   text-decoration: none;
 }
+
+nav .current_page_item,
+nav .current_page_ancestor{
+  background-color: #ddd;
+}
+
 article {
   margin-bottom: 3em;
 }
+
 .postmeta {
+  clear:both;
   background: #eee;
   padding: .2em;
   font-size: .9em;
 }
+
 .postmeta span:not(:last-child) {
   border-right: solid 1px #ccc;
   margin-right: .3em;
   padding-right: .3em;
 }
 
-/****************************** Misc HTML tags********************/
-pre {
-  background-color: skyblue;
-  padding: .2em;
-  overflow-x: auto;
+/*
+== misc HTML tags
+*/
+pre{
+	background-color: #eee;
+	padding:.2em;
+	overflow-x: auto;
+	/*white-space: pre-wrap; */
 }
-/*****************************images*****************************/
-img {
-  max-width: 100%;
-  height: auto;
+/*
+== images
+*/
+img{
+	max-width: 100%;
+	height: auto;
 }
-article * {
-  max-width: 100%;
+article *{
+	max-width: 100%;
 }
 
-/*****************************wordpress-generated classes*****************************/
+/*
+== tags widget
+*/
+#tags a:after{
+  content: ' |';
+  color: #ccc;
+}
+#tags a:last-child:after{
+  content: '';
+}
+
+/*
+== wordpress-generated classes
+*/
+
+/* post class example */
+.sticky:before{
+  content: 'Important Post:';
+  display: block;
+  border-bottom: solid 1px #ccc ;
+  color:#bbb;
+  text-transform: uppercase;
+  font-size: .9em;
+}
+/* post formats example */
+.format-quote{
+  background-color: #eee;
+  padding: 1.5em .5em .5em;
+  position: relative;
+
+}
+/* fancy quotes */
+.format-quote {
+  quotes: "“" "”" "‘" "’";
+}
+
+.format-quote:before {
+    content: open-quote;
+    font-family: georgia, serif;
+    font-size:4em;
+    color:#aaa;
+
+    position: absolute;
+    left:.5rem;
+    top:.5rem;
+}
+
+
 .alignnone {
     margin: 5px 20px 20px 0;
 }
+
 .aligncenter,
 div.aligncenter {
     display: block;
     margin: 5px auto 5px auto;
 }
+
 .alignright {
     float:right;
     margin: 5px 0 20px 20px;
 }
+
 .alignleft {
     float: left;
     margin: 5px 20px 20px 0;
 }
+
 a img.alignright {
     float: right;
     margin: 5px 0 20px 20px;
 }
+
 a img.alignnone {
     margin: 5px 20px 20px 0;
 }
+
 a img.alignleft {
     float: left;
     margin: 5px 20px 20px 0;
 }
+
 a img.aligncenter {
     display: block;
     margin-left: auto;
@@ -118,15 +192,19 @@ a img.aligncenter {
     padding: 5px 3px 10px;
     text-align: center;
 }
+
 .wp-caption.alignnone {
     margin: 5px 20px 20px 0;
 }
+
 .wp-caption.alignleft {
     margin: 5px 20px 20px 0;
 }
+
 .wp-caption.alignright {
     margin: 5px 0 20px 20px;
 }
+
 .wp-caption img {
     border: 0 none;
     height: auto;
@@ -135,12 +213,14 @@ a img.aligncenter {
     padding: 0;
     width: auto;
 }
+
 .wp-caption p.wp-caption-text {
     font-size: 11px;
     line-height: 17px;
     margin: 0;
     padding: 0 4px 5px;
 }
+
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
@@ -150,6 +230,7 @@ a img.aligncenter {
 	width: 1px;
 	overflow: hidden;
 }
+
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
 	border-radius: 3px;
@@ -168,6 +249,15 @@ a img.aligncenter {
 	top: 5px;
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
+}
+.wrapper {
+  background-color: rgba(255,255,255,.4);
+  padding: .5em;
+}
+.wrapper:after {
+  content: '';
+  display: block;
+  clear: both;
 }
 
 @media screen and (min-width:600px) {
@@ -195,5 +285,22 @@ a img.aligncenter {
     border-top: solid 1px #ddd;
     clear: both;
     text-align: center;
+  }
+
+  img.attachment-thumbnail{
+    float:right;
+    margin:0 0 1em 1em;
+  }
+  /* make the header taller on  just the home page. uses the body_class() */
+  .home #header{
+   padding-top: 18vh;
+   background-color: #eee;
+  }
+  .custom-logo {
+    max-width: 100px;
+    height: auto;
+  }
+  .home .custom-logo {
+    max-width: 150px;
   }
 }
