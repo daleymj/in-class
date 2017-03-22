@@ -42,7 +42,7 @@ img {
     color: white; }
   #header .custom-logo-link {
     display: block;
-    background-color: black;
+    background-color: dodgerblue;
     overflow: hidden; }
     @media (min-width: 700px) {
       #header .custom-logo-link {
@@ -173,7 +173,6 @@ img {
 
 @media (min-width: 700px) {
   #sidebar {
-    background-color: rgba(255, 255, 255, 0.6);
     width: 30%;
     float: right; } }
 #sidebar ul li {

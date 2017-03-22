@@ -1,22 +1,22 @@
 <?php get_header(); //include header.php ?>
 
 <main id="content">
-	<?php
+	<?php 
 	if( have_posts() ){
-		while( have_posts() ){
+		while( have_posts() ){ 
 			the_post();
 	 ?>
 	<article <?php post_class(); ?>>
-		<h2 class="entry-title">
-			<a href="<?php the_permalink(); ?>">
-				<?php the_title(); ?>
+		<h2 class="entry-title"> 
+			<a href="<?php the_permalink(); ?>"> 
+				<?php the_title(); ?> 
 			</a>
 		</h2>
 
 		<?php the_post_thumbnail( 'thumbnail' ); ?>
 
 		<div class="entry-content">
-			<?php
+			<?php 
 			if( is_singular() ){
 				//single post, page, attachment, etc
 				the_content();
@@ -28,7 +28,7 @@
 				) );
 			}else{
 				//not singular : archives, blog, search results
-				the_excerpt();
+				the_excerpt();				
 			} ?>
 		</div>
 		<div class="postmeta">
@@ -41,20 +41,20 @@
 		<!-- end .postmeta -->
 	</article>
 	<!-- end .post -->
-	<?php
+	<?php 
 		} //end while
 
 		platty_pagination();
 
-		comments_template('/comments.php', true); //include comments.php or WP default
+		comments_template();
 
 	}//end if there are posts
 	else{
 		echo 'Sorry, no posts to show';
-	}
+	} 
 	?>
 
-
+	
 </main>
 <!-- end #content -->
 
