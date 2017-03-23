@@ -121,12 +121,64 @@ function platty_widget_areas(){
 add_action( 'widgets_init', 'platty_widget_areas' );
 
 /**
-*Improve UX of replying to comments
-*/
-function platty_comments_reply() {
-	wp_enqueue_script('comment-reply');
+ * Improve UX of replying to comments
+ */
+function platty_comments_reply(){
+	wp_enqueue_script( 'comment-reply' );
 }
-add_action('wp_enqueue_scripts', 'platty_comments_reply');
+add_action( 'wp_enqueue_scripts', 'platty_comments_reply' );
+
+/**
+ * Fix the comments number issue (remove ctrackbacks and pingbacks from comment count)
+ */
+add_filter('get_comments_number', 'comment_count', 0);
+function comment_count( $count ) {
+	if ( ! is_admin() ) {
+		global $id;
+		$comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
+		return count($comments_by_type['comment']);
+	} else {
+		return $count;
+	}
+}
+/**
+ * Helper function for showing prices of products. 
+ * call platty_price() anywhere in the loop to use.
+ * 'price' is a custom field.
+ * 
+ * @return mixed. displays HTML for the price tag
+ */
+function platty_price(){
+	global $post;
+	$price = get_post_meta( $post->ID, 'price', true ); 
+	if($price){
+	?>
+		<span class="price">
+			<?php echo $price; ?>
+		</span>
+	<?php }//end if price
+}
+
+/**
+ * Helper function for showing sizes of products. 
+ * call platty_size() anywhere in the loop to use.
+ * 'size' is a custom field.
+ * 
+ * @return mixed. displays HTML for the size tag
+ */
+function platty_size(){
+	global $post;
+	$size = get_post_meta( $post->ID, 'size', true ); 
+	if($size){
+	?>
+		<span class="size">
+			Size: <?php echo $size; ?>
+		</span>
+	<?php }//end if size
+}
+
+
+
 
 
 
