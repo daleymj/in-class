@@ -42,7 +42,7 @@ img {
     color: white; }
   #header .custom-logo-link {
     display: block;
-    background-color: dodgerblue;
+    background-color: black;
     overflow: hidden; }
     @media (min-width: 700px) {
       #header .custom-logo-link {
@@ -253,7 +253,8 @@ a {
 
 /*  ==widgets */
 .widget {
-  padding: 1em; }
+  padding: 1em;
+	background-color: rgba(255, 255, 255, .5); }
   .widget.widget_calendar table {
     table-layout: fixed;
     width: 100%; }

@@ -52,8 +52,8 @@ $max-width:75em;
 		display: -ms-flexbox;
 		-ms-flex-wrap: wrap;
 		-ms-flex-direction: column;
-		-webkit-flex-flow: row wrap; 
-		flex-flow: row wrap; 
+		-webkit-flex-flow: row wrap;
+		flex-flow: row wrap;
 		display: -webkit-box;
 		display: flex;
 
@@ -61,12 +61,12 @@ $max-width:75em;
 			position: relative;
 			-webkit-box-flex: auto;
 			-ms-flex: auto;
-			flex: auto; 
-			width: $width; 
-			margin: .5vw; 
-			img { 
-				width: 100%; 
-				height: auto; 
+			flex: auto;
+			width: $width;
+			margin: .5vw;
+			img {
+				width: 100%;
+				height: auto;
 			}
 		}
 		#{$caption}{
@@ -135,7 +135,7 @@ img{
 	}
 	.custom-logo-link {
 		display: block;
-		background-color:$accent-color;
+		background-color: black;
 		overflow:hidden;
 		@include tablet {
 
@@ -192,7 +192,7 @@ img{
 		ul {
 			margin: 0;
 			padding: 0;
-			list-style-type: none;      
+			list-style-type: none;
 		}
 		li {
 			width: 100%;
@@ -234,7 +234,7 @@ ul{
 		top:100%;
 		left:0;
 		z-index: 100;
-	}        
+	}
 	min-width:320px;
 
 	li{
@@ -255,7 +255,7 @@ ul{
 		width: 68%;
 		float: left;
 		position: relative;
-		top: -6em;   
+		top: -6em;
 
 	}
 	.hentry {
@@ -281,7 +281,7 @@ ul{
 	.page-template-template-no-sidebar &,
 	.home.page &{
 		width:98%;
-		float:none; 
+		float:none;
 		left:0;
 	}
 }
@@ -359,6 +359,7 @@ a {
 
 .widget {
 	padding: 1em;
+	background-color: rgba(255, 255, 255, .5);
 
 	&.widget_calendar table{
 		table-layout: fixed;
@@ -371,7 +372,7 @@ a {
 			vertical-align: center;
 		}
 		th{
-			background-color:$accent-color;   
+			background-color:$accent-color;
 		}
 
 		#today{
@@ -411,7 +412,7 @@ a {
 		margin-right:2%;
 		margin-bottom:10%;
 		float:left;
-		@include hovering-box();    
+		@include hovering-box();
 		&:nth-child(2n+1){
 			clear:both;
 		}
@@ -561,6 +562,3 @@ header h2 {
 .sticky, .gallery-caption,  .bypostauthor{
 	text-decoration: none;
 }
-
-
-
