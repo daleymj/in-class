@@ -1,0 +1,28 @@
+@import 'https://fonts.googleapis.com/css?family=Lato:400,400i,700|Playfair+Display:400,900';
+
+body {
+	margin: 0;
+	font-family: sans-serif;
+	font-family: Lato, arial, sans-serif;
+	color: black;
+	background: #eee;
+}
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-weight: 900;
+}
+
+ul,
+li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	color: $link-color;
+}

@@ -1,32 +1,31 @@
 <?php get_header(); //include header.php ?>
 
 <main id="content">
-	<?php
+	<?php 
 	if( have_posts() ){
-		while( have_posts() ){
+		while( have_posts() ){ 
 			the_post();
 	 ?>
 	<article <?php post_class(); ?>>
-		<h2 class="entry-title">
-			<a href="<?php the_permalink(); ?>">
-				<?php the_title(); ?>
+		<h2 class="entry-title"> 
+			<a href="<?php the_permalink(); ?>"> 
+				<?php the_title(); ?> 
 			</a>
 		</h2>
 
-		<?php the_terms($post->ID, 'brand', '<h3>', '| ', '</h3>'); ?>
+		<?php the_terms( $post->ID, 'brand', '<h3>', ', ', '</h3>' ); ?>
 
 		<?php the_post_thumbnail( 'large' ); ?>
 
 		<div class="entry-content">
-			<?php the_terms($post->ID, 'feature', '<div>', '| ', '</div>'); ?>
-			<?php platty_price(); ?> <br>
+			<?php platty_price(); ?>
 			<?php platty_size(); ?>
 			<?php the_content(); ?>
 		</div>
-
+	
 	</article>
 	<!-- end .post -->
-	<?php
+	<?php 
 		} //end while
 
 		platty_pagination();
@@ -37,13 +36,13 @@
 	}//end if there are posts
 	else{
 		echo 'Sorry, no posts to show';
-	}
+	} 
 	?>
 
-
+	
 </main>
 <!-- end #content -->
 
 
-<?php get_sidebar('shop'); //include sidebar-shop.php ?>
+<?php get_sidebar('shop'); //include sidebar.php ?>
 <?php get_footer(); //include footer.php ?>

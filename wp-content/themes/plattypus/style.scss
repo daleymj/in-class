@@ -1,6 +1,17 @@
-/* todo: remove this later */
-@import 'https://fonts.googleapis.com/css?family=Lato:400,400i,700|Playfair+Display:400,900';
+/*
+Theme Name: Plattypus
+Description: A WordPress theme Demo for WCM400 at Platt College
+Author: Matt Daley
+License: GPLv3
+License URI: http://www.gnu.org/licenses/gpl.html
+Version: 0.1
+Theme URI: http://
+Text Domain: plattypus
+*/
+
 /* Source SCSS is at http://codepen.io/melissacabral/pen/xOaYgq */
+@import 'https://fonts.googleapis.com/css?family=Lato:400,400i,700|Playfair+Display:400,900';
+
 $text-color:    black;
 $link-color:    darkslategray;
 $accent-color:  dodgerblue;
@@ -73,7 +84,7 @@ $max-width:75em;
 			font-size:16px;
 			font-size: 1rem;
 			padding:.5em;
-			background: rgba(black, .1);
+
 			z-index: 1000;
 			width:100%;
 			display:block;
@@ -135,7 +146,7 @@ img{
 	}
 	.custom-logo-link {
 		display: block;
-		background-color: black;
+		background-color:black;
 		overflow:hidden;
 		@include tablet {
 
@@ -250,6 +261,7 @@ ul{
 }
 
 #content {
+	@include clearfix;
 	@include hovering-box;
 	@include tablet {
 		width: 68%;
@@ -279,6 +291,7 @@ ul{
 	}
 	/* full width main content*/
 	.page-template-template-no-sidebar &,
+	.page-template-template-sitemap &,
 	.home.page &{
 		width:98%;
 		float:none;
@@ -359,7 +372,6 @@ a {
 
 .widget {
 	padding: 1em;
-	background-color: rgba(255, 255, 255, .5);
 
 	&.widget_calendar table{
 		table-layout: fixed;
@@ -436,12 +448,38 @@ a {
 		@include stretchy-grid(li, '.caption');
 	}
 }
-.post-type-archive-product .product-grid{
-	@include stretchy-grid(article, '.caption', 200px);
-}
 .price{
+	display:block;
 	color:$accent-color;
 }
+.post-type-archive-product .product-grid{
+	@include stretchy-grid(article, '.caption', 200px);
+	.price{
+		background-color:$accent-color;
+		color:white;
+		display:inline-block;
+		padding:0 .4em;
+		height:1.6em;
+		line-height:1.6em;
+		position: absolute;
+		bottom:9em;
+		left:-2%;
+		border-radius: 5px 0 0 5px;
+		&:after{
+			content:'';
+			position: absolute;
+			top:0;
+			right:-10px;
+			width:0;
+			height:0;
+			border-left:solid $accent-color 10px;
+			border-top:solid transparent .8em;
+			border-bottom: solid transparent .8em;
+
+		}
+	}
+}
+
 
 /* ==wordpress core */
 
@@ -561,4 +599,12 @@ header h2 {
 
 .sticky, .gallery-caption,  .bypostauthor{
 	text-decoration: none;
+}
+
+.one-third {
+  width: 33.33%;
+  float: left;
+}
+.format-quote {
+	background: yellow;
 }

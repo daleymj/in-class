@@ -1,6 +1,11 @@
 <?php
 //turn on sleeping features
 
+// auto embed max width
+if ( ! isset( $content_width ) ) $content_width = 710;
+
+add_editor_style(); //make the file editor-style.css
+
 //featured image support:
 add_theme_support('post-thumbnails');
 
@@ -142,15 +147,15 @@ function comment_count( $count ) {
 	}
 }
 /**
- * Helper function for showing prices of products. 
+ * Helper function for showing prices of products.
  * call platty_price() anywhere in the loop to use.
  * 'price' is a custom field.
- * 
+ *
  * @return mixed. displays HTML for the price tag
  */
 function platty_price(){
 	global $post;
-	$price = get_post_meta( $post->ID, 'price', true ); 
+	$price = get_post_meta( $post->ID, 'price', true );
 	if($price){
 	?>
 		<span class="price">
@@ -160,15 +165,15 @@ function platty_price(){
 }
 
 /**
- * Helper function for showing sizes of products. 
+ * Helper function for showing sizes of products.
  * call platty_size() anywhere in the loop to use.
  * 'size' is a custom field.
- * 
+ *
  * @return mixed. displays HTML for the size tag
  */
 function platty_size(){
 	global $post;
-	$size = get_post_meta( $post->ID, 'size', true ); 
+	$size = get_post_meta( $post->ID, 'size', true );
 	if($size){
 	?>
 		<span class="size">
