@@ -1,0 +1,40 @@
+/*
+Theme Name: Baby 2016
+Description: Demo of child themes
+Author: Matt Daley
+License: GPLv3
+Version: 0.1
+Template: twentysixteen
+*/
+
+body {
+  background-color: green;
+  font-family: 'Press Start 2P', cursive;
+}
+
+/*Font Change!*/
+.entry-title,
+.page-title,
+.widget .widget-title,
+.site-title,
+.main-navigation {
+  font-family: 'Lobster', cursive;
+  text-transform: none;
+}
+
+
+
+@media screen and (min-width:600px) {
+   .footer-widgets .widget {
+     width: 50%;
+     float: left;
+   }
+ }
+ @media screen and (min-width:900px) {
+    .footer-widgets .widget {
+      width: 25%;
+    }
+  }
+
+
+font-family: 'Lobster', cursive;
